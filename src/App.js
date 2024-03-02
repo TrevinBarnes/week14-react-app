@@ -1,41 +1,37 @@
 
 import './App.css';
-
+import {Star} from './Stars.js';
+import {Form} from './form.js';
+/*questions to ask
+  -how to make buttons into stars
+    not needed but if time how to make the average shown
+  -how to save user input for reviews 
+  -** good source to help with any future complications **
+*/
 function App() {
   return (
     <div className="MovieList">
       <div className="Movie">
         <h1 id="Title"></h1>
         <img src='https://academymuseumstore.org/cdn/shop/products/movieposterredo32.jpg?v=1666936667' id='MovieCover'/>
-        <p>Revenge of the Sith is the third of the prequal trilogy. Telling the story of how anakin skywalker battles his fears which eventually lead him to becoming Darth Vader. 
+        <p>Revenge of the Sith is the third of the prequel trilogy. Telling the story of how Anakin Skywalker battles his fears which eventually lead him to becoming Darth Vader. 
         This movie contains a lot of action and causes a variety of emotions. </p>
         <div className='Rating'>
-          <button className='Stars'>1star</button>
-          <button className='Stars'>2star</button>
-          <button className='Stars'>3star</button>
-          <button className='Stars'>4star</button>
-          <button className='Stars'>5star</button>
           <div className='ReviewList'>
-            <p>leave your opinions here</p>
-            <div className='Review' >
-
+            <div className='ReviewForm' >
+              <Form/>
             </div>
           </div>
-          
-          
         </div>
-
-
       </div>
     </div>
-
-
-
   );
 }
 
 
 export default App;
+
+
 
 
 /*
