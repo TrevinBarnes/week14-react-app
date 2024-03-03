@@ -11,51 +11,51 @@ export function Form(){
 
     const handleInputNameChange = (e) => {
         setInputName(e.target.value);
-      };
+    };
 
     const handleInputReviewChange = (e) => {
         setInputReview(e.target.value);
-      };
+    };
 
-    const Submit= (e) => {
+    const handleSubmit= (e) => {
         e.preventDefault();
         if(!inputName.trim() || !inputReview.trim()) return;
-        setInputReview([...inputReview,inputName]);
+        setInputReview([...inputReview,{ name: inputName, review: inputReview}]);
         setInputName('')
     };
 
     return( 
-    <div>
-        <form onSubmit={Submit}>
-            <Star/>
-            <label>
-             Name:
-                <input
-                    type='text'
-                    value={inputName}
-                    onChange={handleInputNameChange}                
-                />
-            </label>
-            <br/>
-            <label>
-             Review:
-                <input
-                    type='text'
-                    value={inputReview}
-                    onChange={handleInputReviewChange}
-                />
-            </label>
-            <br/>
-            <button type='submit'>Submit</button>
-        </form>
-        <ul>
-            {inputReview.map((setInputReview,index)=>(
-            <li key={index}>
-                <Star/> <br/> {inputName} <br/> {inputReview}
-            </li>
-            ))}
-        </ul>
-    </div>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <Star/>
+                <label>
+                    Name:
+                    <input
+                        type='text'
+                        value={inputName}
+                        onChange={handleInputNameChange}                
+                    />
+                </label>
+                <br/>
+                <label>
+                    Review:
+                    <input
+                        type='text'
+                        value={inputReview}
+                        onChange={handleInputReviewChange}
+                    />
+                </label>
+                <br/>
+                <button type='submit'>Submit</button>
+            </form>
+            <ul>
+                {inputReview.map((review,index)=>(
+                <li key={index}>
+                    <Star/> <br/> {review.name} <br/> {review.review}
+                </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 export default Form;

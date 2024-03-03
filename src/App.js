@@ -1,13 +1,8 @@
 
 import './App.css';
-import {Star} from './Stars.js';
 import {Form} from './form.js';
-/*questions to ask
-  -how to make buttons into stars
-    not needed but if time how to make the average shown
-  -how to save user input for reviews 
-  -** good source to help with any future complications **
-*/
+
+
 function App() {
   return (
     <div className="MovieList">
